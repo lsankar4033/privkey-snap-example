@@ -1,5 +1,8 @@
 import {deriveBIP44AddressKey} from '@metamask/key-tree';
 
+// NOTE: this shows that we 'include' files in snap distribution during packaging
+import * as testData from './test.json';
+
 wallet.registerRpcMessageHandler(async (originString, requestObject) => {
   switch (requestObject.method) {
     case 'hello':
@@ -16,7 +19,10 @@ wallet.registerRpcMessageHandler(async (originString, requestObject) => {
 
       // NOTE: this is where we would process this for proof generation!
 
-      return privateKey;
+      return {
+        privateKey,
+        testData
+      };
     default:
       throw new Error('Method not found.');
   }
