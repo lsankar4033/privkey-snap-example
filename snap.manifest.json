@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0",
+  "description": "The privkey-snap Snap.",
+  "proposedName": "privkey-snap",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lsankar4033/privkey-snap.git"
+  },
+  "source": {
+    "shasum": "ugRI+2ippw2w2gNSGWpvCRu5L1LD2j4FWQ+KcO/1dIE=",
+    "location": {
+      "npm": {
+        "filePath": "dist/bundle.js",
+        "packageName": "privkey-snap",
+        "registry": "https://registry.npmjs.org"
+      }
+    }
+  },
+  "initialPermissions": {
+    "snap_confirm": {}
+  },
+  "manifestVersion": "0.1"
+}
