@@ -7,7 +7,7 @@
     "url": "https://github.com/lsankar4033/privkey-snap.git"
   },
   "source": {
-    "shasum": "ugRI+2ippw2w2gNSGWpvCRu5L1LD2j4FWQ+KcO/1dIE=",
+    "shasum": "Bl1OizyjLSSFByE+EGf1j8FWpgwfetBRpa5l1CqCXxQ=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
@@ -17,7 +17,9 @@
     }
   },
   "initialPermissions": {
-    "snap_confirm": {}
+    "snap_confirm": {},
+    "snap_getBip44Entropy_60": {},
+    "snap_manageState": {}
   },
   "manifestVersion": "0.1"
 }
