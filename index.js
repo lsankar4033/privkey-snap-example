@@ -1,18 +1,22 @@
+import {deriveBIP44AddressKey} from '@metamask/key-tree';
+
 wallet.registerRpcMessageHandler(async (originString, requestObject) => {
   switch (requestObject.method) {
     case 'hello':
-      return wallet.request({
-        method: 'snap_confirm',
-        params: [
-          {
-            prompt: `Hello, ${originString}!`,
-            description:
-              'This custom confirmation is just for display purposes.',
-            textAreaContent:
-              'But you can edit the snap source code to make it do something, if you want to!',
-          },
-        ],
+      const ethNode = await wallet.request({
+        method: 'snap_getBip44Entropy_60',
       });
+
+      const extendedPrivateKey = deriveBIP44AddressKey(ethNode, {
+        account: 0,
+        address_index: 0,
+        change: 0
+      });
+      const privateKey = extendedPrivateKey.slice(0, 32);
+
+      // NOTE: this is where we would process this for proof generation!
+
+      return privateKey;
     default:
       throw new Error('Method not found.');
   }

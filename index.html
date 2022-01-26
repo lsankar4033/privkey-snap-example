@@ -56,7 +56,10 @@
             method: 'hello'
           }]
         })
+        console.log('Private key byte array (as ints) below:');
+        console.log(response);
       } catch (err) {
+        console.log('ERROR');
         console.error(err)
         alert('Problem happened: ' + err.message || err)
       }
